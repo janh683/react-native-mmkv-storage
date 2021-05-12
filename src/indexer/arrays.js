@@ -34,8 +34,11 @@ export default class arrayIndex {
         global.getIndexMMKV,
         INDEX_TYPE,
         this.instanceID,
-      ) || [];
+      );
       let items = [];
+      if (!Array.isArray(keys)) {
+        keys = [];
+      }
       for (let i = 0; i < keys.length; i++) {
         let item = [];
         item[0] = keys[i];

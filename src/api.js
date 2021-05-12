@@ -209,6 +209,9 @@ export default class API {
   getMultipleItems = (keys = [], type = "map") => {
     const func = () => {
       let items = [];
+      if (!Array.isArray(keys)) {
+        keys = [];
+      }
       for (let i = 0; i < keys.length; i++) {
         let item = [];
         item[0] = keys[i];
